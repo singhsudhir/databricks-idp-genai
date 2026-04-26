@@ -2,7 +2,7 @@
 
 > Automated extraction of structured data from invoices, purchase orders, and receipts — built entirely on Databricks using native AI functions (`ai_parse_document`, `ai_classify`, `ai_extract`), landing into governed Unity Catalog Delta tables.
 
-![Pipeline Overview](docs/architecture.png)
+![Pipeline Overview](docs/architecture_idp.svg)
 
 🎥 **[Watch the 5-minute walkthrough →](#)** *(link your Loom/YouTube video here once recorded)*
 
@@ -32,7 +32,7 @@ A repeatable pipeline that, for any new business document landed in a Databricks
 
 ## Architecture
 
-![Architecture Diagram](docs/architecture.svg)
+![Architecture Diagram](docs/architecture_idp.svg)
 
 ```
 PDF Documents ──► Unity Catalog Volume
