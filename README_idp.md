@@ -32,7 +32,7 @@ A repeatable pipeline that, for any new business document landed in a Databricks
 
 ## Architecture
 
-![Architecture Diagram](docs/architecture.png)
+![Architecture Diagram](docs/architecture.svg)
 
 ```
 PDF Documents ──► Unity Catalog Volume
@@ -159,15 +159,10 @@ After running the pipeline against the three sample PDFs, the resulting tables l
 - **Where the AI functions surprised me, positively or negatively.** (e.g., handwritten receipts, multi-page invoices, non-English text, line-item extraction accuracy.)
 - **A design choice I changed mid-project.** (e.g., originally tried single-shot extraction, switched to classify-then-extract because accuracy was unstable.)
 - **What I'd tell another engineer starting an IDP project on Databricks tomorrow.**
-
 This section is what separates "I followed a tutorial" from "I've actually run this in anger." Keep it specific and honest.
 
 ## About me
 
 I'm a Databricks data engineer based in Utrecht, NL, focused on GenAI-native data platforms — turning unstructured business content into governed, analytics-ready data inside the Lakehouse. Available for contract and consulting engagements.
 
-📧 **{your email}** · 💼 **[LinkedIn]({your LinkedIn URL})** · 🌐 **[Portfolio]({your site})**
-
----
-
-*Sample documents are synthetic / public-domain and contain no real PII.*
+💼 **[LinkedIn]({[your LinkedIn URL](https://www.linkedin.com/in/sudhirsinghkumar/)})**
