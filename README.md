@@ -126,9 +126,9 @@ databricks-idp-genai/
 ## How to reproduce this
 
 1. Clone the repo into your Databricks workspace (or import the notebook files).
-2. Run `notebooks/01_volume_setup.sql` to create the catalog, schema, and volume.
-3. Upload the sample PDFs from `sample_documents/` into the volume (or use your own).
-4. Run notebooks in order: `02_` → `03_` → `04_` → `05_`.
+2. Create the catalog, schema, and volumes.
+3. Upload the sample PDFs (provided here) into the volume (or use your own).
+4. Run `notebooks/idp_pipeline.sql.ipynb for full transformation pipeline.
 5. Verify the three Delta tables (`invoices`, `purchase_orders`, `receipts`) are populated with extracted data.
 6. (Optional) Build a Lakeview dashboard or Genie space on top of the tables.
 
@@ -136,14 +136,7 @@ Tested on Databricks Free Edition with a Serverless Starter Warehouse.
 
 ## Sample output
 
-After running the pipeline against the three sample PDFs, the resulting tables look like:
-
-**`invoices`** (excerpt)
-| invoice_number | vendor_name | invoice_date | total_amount | currency |
-|---|---|---|---|---|
-| INV-2024-0142 | Acme Office Supplies | 2024-09-12 | 1,247.50 | USD |
-
-{Add rows for the other two tables once you have a clean run.}
+Look at screenshots folder for Parsed, classified and final table outputs.
 
 ## Lessons learned
 
