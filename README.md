@@ -90,25 +90,18 @@ databricks-idp-genai/
 │   ├── pipeline-flow.png
 │   └── ai-functions-comparison.md
 ├── sample_documents/
-│   ├── invoices/
-│   │   └── sample_invoice_01.pdf
-│   ├── purchase_orders/
-│   │   └── sample_po_01.pdf
-│   └── receipts/
-│       └── sample_receipt_01.pdf
+│   ├── invoices
+│   ├── purchase_orders
+│   └── receipts
 ├── notebooks/
-│   ├── 01_volume_setup.sql            # create UC catalog, schema, volume
-│   ├── 02_ai_parse_document.sql       # parse PDFs into structured form
-│   ├── 03_ai_classify.sql             # classify into invoice / PO / receipt
-│   ├── 04_ai_extract.sql              # extract typed fields per class
-│   └── 05_load_to_delta_tables.sql    # land into governed Delta tables
+│   ├── idp_pipeline.sql.ipynb
 ├── sql/
 │   └── ddl/
 │       ├── invoices_table.sql
 │       ├── purchase_orders_table.sql
 │       └── receipts_table.sql
 └── screenshots/
-    ├── parse_output.png
+    ├── ![parse_output](screenshots/parse_output.svg)
     ├── classify_output.png
     └── final_tables.png
 ```
