@@ -101,7 +101,7 @@ databricks-idp-genai/
 │       ├── purchase_orders_table.sql
 │       └── receipts_table.sql
 └── screenshots/
-    ├── ![parse_output](screenshots/parse_output.png)
+    ├── parse_output.png
     ├── classify_output.png
     └── final_tables.png
 ```
