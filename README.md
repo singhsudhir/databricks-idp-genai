@@ -97,13 +97,13 @@ databricks-idp-genai/
 │   ├── idp_pipeline.sql.ipynb
 ├── sql/
 │   └── ddl/
-│       ├── invoices_table.sql
-│       ├── purchase_orders_table.sql
-│       └── receipts_table.sql
+│       ├── invoices.sql
+│       ├── purchase_orders.sql
+│       └── receipts.sql
 └── screenshots/
-    ├── parse_output.png
-    ├── classify_output.png
-    └── final_tables.png
+    ├── parse_output.jpeg
+    ├── classify_output.jpeg
+    └── final_tables.jpeg
 ```
 
 ## Key design decisions & trade-offs
