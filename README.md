@@ -144,11 +144,6 @@ My initial instinct was to try a single-shot approach: pass each document to ai_
 _Lesson 2: The parsing step matters more than the AI steps._
 I spent most of my time tuning the ai_classify and ai_extract prompts, but the single biggest factor in extraction quality turned out to be how well ai_parse_document structured the raw PDF in the first place. The transform + coalesce + concat_ws flattening step (converting the nested elements array into clean doc_text) was where the real work happened. When the flattened text was clean and well-ordered, classification and extraction worked almost perfectly. 
 
-- **Where the AI functions surprised me, positively or negatively.** (e.g., handwritten receipts, multi-page invoices, non-English text, line-item extraction accuracy.)
-- **A design choice I changed mid-project.** (e.g., originally tried single-shot extraction, switched to classify-then-extract because accuracy was unstable.)
-- **What I'd tell another engineer starting an IDP project on Databricks tomorrow.**
-This section is what separates "I followed a tutorial" from "I've actually run this in anger." Keep it specific and honest.
-
 ## About me
 
 I'm a Data Architect / Engineer based in Utrecht, NL, focused on GenAI-native data platforms — turning unstructured business content into governed, analytics-ready data inside the Lakehouse. Available for contract and consulting engagements.
