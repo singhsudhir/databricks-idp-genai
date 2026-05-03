@@ -4,8 +4,6 @@
 
 ![Pipeline Overview](docs/architecture_idp.svg)
 
-🎥 **[Watch the 5-minute walkthrough →](#)** *(link your Loom/YouTube video here once recorded)*
-
 ---
 
 ## The business problem
@@ -140,7 +138,11 @@ Look at screenshots folder for Parsed, classified and final table outputs.
 
 ## Lessons learned
 
-{Three honest paragraphs. Suggested angles — keep whichever are true for you:}
+_Lesson 1: Classify first, then extract — not the other way around._
+My initial instinct was to try a single-shot approach: pass each document to ai_extract with a universal schema covering all possible fields (vendor, invoice number, PO number, receipt number, merchant, etc.) and sort out what came back. This was messy — the model would hallucinate fields that didn't exist in the document, or map the wrong value to the wrong field (e.g., pulling a receipt's transaction date into the invoice_date column). Splitting the pipeline into classify-then-extract, with a tailored field list per document type, was significantly more accurate and far easier to debug. It also means adding a fourth document type (say, credit notes) is a contained change — one new WHERE clause and one new ai_extract call — rather than a rework of a fragile universal schema.
+
+_Lesson 2: The parsing step matters more than the AI steps._
+I spent most of my time tuning the ai_classify and ai_extract prompts, but the single biggest factor in extraction quality turned out to be how well ai_parse_document structured the raw PDF in the first place. The transform + coalesce + concat_ws flattening step (converting the nested elements array into clean doc_text) was where the real work happened. When the flattened text was clean and well-ordered, classification and extraction worked almost perfectly. 
 
 - **Where the AI functions surprised me, positively or negatively.** (e.g., handwritten receipts, multi-page invoices, non-English text, line-item extraction accuracy.)
 - **A design choice I changed mid-project.** (e.g., originally tried single-shot extraction, switched to classify-then-extract because accuracy was unstable.)
@@ -149,6 +151,6 @@ This section is what separates "I followed a tutorial" from "I've actually run t
 
 ## About me
 
-I'm a Databricks data engineer based in Utrecht, NL, focused on GenAI-native data platforms — turning unstructured business content into governed, analytics-ready data inside the Lakehouse. Available for contract and consulting engagements.
+I'm a Data Architect / Engineer based in Utrecht, NL, focused on GenAI-native data platforms — turning unstructured business content into governed, analytics-ready data inside the Lakehouse. Available for contract and consulting engagements.
 
 💼 **[LinkedIn]({[your LinkedIn URL](https://www.linkedin.com/in/sudhirsinghkumar/)})**
